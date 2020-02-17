@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group 'com.envyful.test'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url = 'https://repo.codemc.io/repository/maven-public/' }
+    maven { url = 'https://jitpack.io' }
+    maven { url = "https://repo.codemc.io/repository/nms/"}
+    maven { url = "https://repo.aikar.co/content/groups/aikar/" }
+    maven { url = "https://ci.ender.zone/plugin/repository/everything/"}
+    maven { url = "https://repo.codemc.io/repository/maven-public/"}
+    maven { url = "http://repo.extendedclip.com/content/repositories/placeholderapi/"}
+}
+
+compileJava {
+    options.compilerArgs += ["-parameters"]
+    options.fork = true
+    options.forkOptions.executable = 'javac'
+}
+
+dependencies {
+    compileOnly 'com.destroystokyo.paper:paper-api:1.14.4-R0.1-SNAPSHOT'
+    compileOnly 'com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.0'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+configurations {
+    jar.archiveName = rootProject.name + '.jar'
+}

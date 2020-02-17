@@ -1,0 +1,5 @@
+name: ObsidianHolograms
+version: 1.0
+main: com.envyful.obsidianhologram.ObsidianHologram
+author: Envyful
+depend: [ HolographicDisplays ]
