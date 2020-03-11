@@ -22,7 +22,7 @@ public class HologramDespawnTask implements Runnable{
             Map.Entry<Hologram, Long> entry = entryIterator.next();
 
             if(System.currentTimeMillis() <= entry.getValue()) {
-                return;
+                continue;
             }
 
             entry.getKey().delete();
